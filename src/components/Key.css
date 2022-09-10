@@ -1,0 +1,47 @@
+.key
+{
+    background-color: white;
+    height: 60px;
+    width: 12px;
+    border: 1px solid black;
+}
+
+.key-flat
+{
+    position: relative;
+    background-color: black;
+    margin-left: -3px;
+    margin-right: -3px;
+    height: 40px;
+    width: 6px;
+    z-index: 2;
+}
+
+.key-pressed
+{
+    background-color: gray;
+    height: 60px;
+    width: 12px;
+    border: 1px solid black;
+}
+
+.key-flat-pressed
+{
+    position: relative;
+    background-color: gray;
+    margin-left: -3px;
+    margin-right: -3px;
+    height: 40px;
+    width: 6px;
+    z-index: 2;
+}
+
+.key-text
+{
+    position: relative;
+    color: black;
+    font-weight: 600;
+    font-size: 7px;
+    margin-top: 48px;
+    pointer-events: none;
+}

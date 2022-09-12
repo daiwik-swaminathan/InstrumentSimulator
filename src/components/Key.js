@@ -23,7 +23,7 @@ class Key extends React.Component
         // let noteMajorNum = parseInt(this.props.note.charAt(this.props.note.length - 1), 10)
         let noteMajorNum = parseInt(this.props.note.slice(-1), 10)
 
-        if(noteMajorNum === this.props.majorNum)
+        if(noteMajorNum === this.props.leftMajorNum)
         {
             let keyIsPressed = this.props.pressedKeys.includes(LEFT_NOTE_TO_KEY[this.props.note.slice(0, -1)])
 
@@ -32,7 +32,7 @@ class Key extends React.Component
                 keyClassName += '-pressed'
             }
         }
-        else if(noteMajorNum === this.props.majorNum + 1)
+        if(noteMajorNum === this.props.rightMajorNum)
         {
             let keyIsPressed = this.props.pressedKeys.includes(RIGHT_NOTE_TO_KEY[this.props.note.slice(0, -1)])
 
@@ -41,7 +41,7 @@ class Key extends React.Component
                 keyClassName += '-pressed'
             }
         }
-        else
+        if(noteMajorNum !== this.props.leftMajorNum && noteMajorNum !== this.props.rightMajorNum)
         {
             keyClassName += '-not-playable'
         }

@@ -10,7 +10,8 @@ class Piano extends React.Component
         super(props)
         this.state = {
             pressedKeys: [],
-            majorNum: 4
+            leftMajorNum: 4,
+            rightMajorNum: 5
         }
     }
 
@@ -27,19 +28,35 @@ class Piano extends React.Component
         }
         const key = event.key
 
-        if(key === 'ArrowUp' && this.state.majorNum < 7)
+        if(key === 'ArrowUp' && this.state.rightMajorNum < 7)
         {
-            let newMajorNum = this.state.majorNum + 1
+            let newMajorNum = this.state.rightMajorNum + 1
             this.setState({
-                majorNum: newMajorNum
+                rightMajorNum: newMajorNum
             })
         }
 
-        if(key === 'ArrowDown' && this.state.majorNum > 1)
+        if(key === 'ArrowDown' && this.state.rightMajorNum > this.state.leftMajorNum + 0)
         {
-            let newMajorNum = this.state.majorNum - 1
+            let newMajorNum = this.state.rightMajorNum - 1
             this.setState({
-                majorNum: newMajorNum
+                rightMajorNum: newMajorNum
+            })
+        }
+
+        if(key === 'ArrowLeft' && this.state.leftMajorNum > 1)
+        {
+            let newMajorNum = this.state.leftMajorNum - 1
+            this.setState({
+                leftMajorNum: newMajorNum
+            })
+        }
+
+        if(key === 'ArrowRight' && this.state.leftMajorNum < this.state.rightMajorNum - 0)
+        {
+            let newMajorNum = this.state.leftMajorNum + 1
+            this.setState({
+                leftMajorNum: newMajorNum
             })
         }
 
@@ -57,14 +74,14 @@ class Piano extends React.Component
             let note = LEFT_KEY_TO_NOTE[key]
             if(note)
             {
-                const noteAudio = new Audio(document.getElementById(note+this.state.majorNum).src)
+                const noteAudio = new Audio(document.getElementById(note+this.state.leftMajorNum).src)
                 noteAudio.play()
             }
 
             note = RIGHT_KEY_TO_NOTE[key]
             if(note)
             {
-                const noteAudio = new Audio(document.getElementById(note+(this.state.majorNum+1)).src)
+                const noteAudio = new Audio(document.getElementById(note+(this.state.rightMajorNum)).src)
                 noteAudio.play()
             }
         }
@@ -103,9 +120,9 @@ class Piano extends React.Component
         var keys = []
         var audioFiles = []
 
-        keys.push(<Key key={0} note={'A0'} pressedKeys={this.state.pressedKeys} majorNum={this.state.majorNum}></Key>)
-        keys.push(<Key key={1} note={'Bb0'} pressedKeys={this.state.pressedKeys} majorNum={this.state.majorNum}></Key>)
-        keys.push(<Key key={2} note={'B0'} pressedKeys={this.state.pressedKeys} majorNum={this.state.majorNum}></Key>)
+        keys.push(<Key key={0} note={'A0'} pressedKeys={this.state.pressedKeys} leftMajorNum={this.state.leftMajorNum} rightMajorNum={this.state.rightMajorNum}></Key>)
+        keys.push(<Key key={1} note={'Bb0'} pressedKeys={this.state.pressedKeys} leftMajorNum={this.state.leftMajorNum} rightMajorNum={this.state.rightMajorNum}></Key>)
+        keys.push(<Key key={2} note={'B0'} pressedKeys={this.state.pressedKeys} leftMajorNum={this.state.leftMajorNum} rightMajorNum={this.state.rightMajorNum}></Key>)
 
         audioFiles.push(<audio id={'A0'} key={0} src={`../../notes/${'A0'}.mp3`}></audio>)
         audioFiles.push(<audio id={'Bb0'} key={1} src={`../../notes/${'Bb0'}.mp3`}></audio>)
@@ -116,12 +133,12 @@ class Piano extends React.Component
         {
             for(let j=0; j<NOTES.length; j++, keyID++)
             {
-                keys.push(<Key key={keyID} note={NOTES[j]+i} pressedKeys={this.state.pressedKeys} majorNum={this.state.majorNum}></Key>)
+                keys.push(<Key key={keyID} note={NOTES[j]+i} pressedKeys={this.state.pressedKeys} leftMajorNum={this.state.leftMajorNum} rightMajorNum={this.state.rightMajorNum}></Key>)
                 audioFiles.push(<audio id={NOTES[j]+i} key={keyID} src={`../../notes/${NOTES[j]+i}.mp3`}></audio>)
             }
         }
 
-        keys.push(<Key key={87} note={'C8'} pressedKeys={this.state.pressedKeys} majorNum={this.state.majorNum}></Key>)
+        keys.push(<Key key={87} note={'C8'} pressedKeys={this.state.pressedKeys} leftMajorNum={this.state.leftMajorNum} rightMajorNum={this.state.rightMajorNum}></Key>)
         audioFiles.push(<audio id={'C8'} key={87} src={`../../notes/${'C8'}.mp3`}></audio>)
 
         // const audioFiles = NOTES.map( (note, index) => {

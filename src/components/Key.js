@@ -4,6 +4,11 @@ import {LEFT_NOTE_TO_KEY, RIGHT_NOTE_TO_KEY} from '../global/constants.js'
 
 class Key extends React.Component
 {
+    handleClick(note)
+    {
+        const noteAudio = new Audio(document.getElementById(note).src)
+        noteAudio.play()
+    }
     render()
     {
         let keyClassName = 'key'
@@ -36,19 +41,23 @@ class Key extends React.Component
                 keyClassName += '-pressed'
             }
         }
+        else
+        {
+            keyClassName += '-not-playable'
+        }
 
         let key;
 
         if(isFlat)
         {
             key = (
-                <div className={keyClassName}></div>
+                <div className={keyClassName} style={{cursor : 'pointer'}} onClick={() => this.handleClick(this.props.note)}></div>
             )
         }
         else
         {
             key = (
-                <div className={keyClassName}>
+                <div className={keyClassName} style={{cursor : 'pointer'}} onClick={() => this.handleClick(this.props.note)}>
                     <div className='key-text'>{this.props.note}</div>
                 </div>
             )

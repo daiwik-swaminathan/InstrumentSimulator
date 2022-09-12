@@ -17,6 +17,25 @@
     z-index: 2;
 }
 
+.key-not-playable
+{
+    background-color: gray;
+    height: 60px;
+    width: 12px;
+    border: 1px solid black;
+}
+
+.key-flat-not-playable
+{
+    position: relative;
+    background-color: black;
+    margin-left: -3px;
+    margin-right: -3px;
+    height: 40px;
+    width: 6px;
+    z-index: 2;
+}
+
 .key-pressed
 {
     background-color: gray;

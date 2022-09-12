@@ -57,7 +57,6 @@ class Piano extends React.Component
             let note = LEFT_KEY_TO_NOTE[key]
             if(note)
             {
-                console.log('hi there: '+note+this.state.majorNum)
                 const noteAudio = new Audio(document.getElementById(note+this.state.majorNum).src)
                 noteAudio.play()
             }
@@ -69,8 +68,6 @@ class Piano extends React.Component
                 noteAudio.play()
             }
         }
-
-        console.log('major num is: ' + this.state.majorNum)
     }
 
     handleKeyUp = (event) => {

@@ -63,34 +63,6 @@
 // const VALID_WHITE_KEYS = ['z', 'x', 'c', 'w', 'e', 'r', 't',  'b', 'n', 'm', 'y', 'u', 'i', 'o'];
 // const VALID_KEYS = [...VALID_BLACK_KEYS, ...VALID_WHITE_KEYS];
 
-// const NOTES = [
-// 'C4',
-// 'Db4',
-// 'D4',
-// 'Eb4',
-// 'E4',
-// 'F4',
-// 'Gb4',
-// 'G4',
-// 'Ab4',
-// 'A4',
-// 'Bb4',
-// 'B4',
-
-// 'C5',
-// 'Db5',
-// 'D5',
-// 'Eb5',
-// 'E5',
-// 'F5',
-// 'Gb5',
-// 'G5',
-// 'Ab5',
-// 'A5',
-// 'Bb5',
-// 'B5'
-// ]
-
 const NOTES = [
     'C',
     'Db',
@@ -165,62 +137,6 @@ const RIGHT_NOTE_TO_KEY = {
     Bb:'7',
     B:'u'
 }
-
-// const KEY_TO_NOTE = {
-//     z: 'C4',
-//     s: 'Db4',
-//     x: 'D4',
-//     d: 'Eb4',
-//     c: 'E4',
-//     v: 'F4',
-//     g: 'Gb4',
-//     b: 'G4',
-//     h: 'Ab4',
-//     n: 'A4',
-//     j: 'Bb4',
-//     m: 'B4',
-
-//     q: 'C5',
-//     2: 'Db5',
-//     w: 'D5',
-//     3: 'Eb5',
-//     e: 'E5',
-//     r: 'F5',
-//     5: 'Gb5',
-//     t: 'G5',
-//     6: 'Ab5',
-//     y: 'A5',
-//     7: 'Bb5',
-//     u: 'B5'
-// }
-
-// const NOTE_TO_KEY = {
-//     C4:'z',
-//     Db4:'s',
-//     D4:'x',
-//     Eb4:'d',
-//     E4:'c',
-//     F4:'v',
-//     Gb4:'g',
-//     G4:'b',
-//     Ab4:'h',
-//     A4:'n',
-//     Bb4:'j',
-//     B4:'m',
-
-//     C5:'q',
-//     Db5:'2',
-//     D5:'w',
-//     Eb5:'3',
-//     E5:'e',
-//     F5:'r',
-//     Gb5:'5',
-//     G5:'t',
-//     Ab5:'6',
-//     A5:'y',
-//     Bb5:'7',
-//     B5:'u'
-// }
 
 const VALID_BLACK_KEYS = ['s', 'd', 'g', 'h', 'j',  '2', '3', '5', '6', '7'];
 const VALID_WHITE_KEYS = ['z', 'x', 'c', 'v', 'b', 'n', 'm',  'q', 'w', 'e', 'r', 't', 'y', 'u'];

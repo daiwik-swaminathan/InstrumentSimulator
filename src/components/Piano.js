@@ -28,7 +28,7 @@ class Piano extends React.Component
         }
         const key = event.key
 
-        if(key === 'ArrowUp' && this.state.rightMajorNum < 7)
+        if(key === 'ArrowUp' && this.state.rightMajorNum <= 7)
         {
             let newMajorNum = this.state.rightMajorNum + 1
             this.setState({
@@ -44,7 +44,7 @@ class Piano extends React.Component
             })
         }
 
-        if(key === 'ArrowLeft' && this.state.leftMajorNum > 1)
+        if(key === 'ArrowLeft' && this.state.leftMajorNum >= 1)
         {
             let newMajorNum = this.state.leftMajorNum - 1
             this.setState({

@@ -61,6 +61,16 @@
     color: black;
     font-weight: 600;
     font-size: 7px;
-    margin-top: 48px;
+    margin-top: 50px;
+    pointer-events: none;
+}
+
+.key-text-key
+{
+    position: relative;
+    color: black;
+    font-weight: 600;
+    font-size: 7px;
+    margin-top: -18px;
     pointer-events: none;
 }

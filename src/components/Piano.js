@@ -147,12 +147,8 @@ class Piano extends React.Component
         //     )
         // }) 
 
-        
-
-
-
         return (
-            <div>
+            <div className='piano-container'>
                 <div className='piano'>
                     {keys}
                 </div>

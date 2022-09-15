@@ -22,7 +22,7 @@ class Key extends React.Component
 
         // let noteMajorNum = parseInt(this.props.note.charAt(this.props.note.length - 1), 10)
         let noteMajorNum = parseInt(this.props.note.slice(-1), 10)
-        let temp = ''
+        let finger = ''
         if(noteMajorNum === this.props.leftMajorNum)
         {
             let keyIsPressed = this.props.pressedKeys.includes(LEFT_NOTE_TO_KEY[this.props.note.slice(0, -1)])
@@ -31,7 +31,7 @@ class Key extends React.Component
             {
                 keyClassName += '-pressed'
             }
-            temp = LEFT_NOTE_TO_KEY[this.props.note.slice(0, -1)]
+            finger = LEFT_NOTE_TO_KEY[this.props.note.slice(0, -1)]
         }
         
         if(noteMajorNum === this.props.rightMajorNum)
@@ -42,7 +42,7 @@ class Key extends React.Component
             {
                 keyClassName += '-pressed'
             }
-            temp = RIGHT_NOTE_TO_KEY[this.props.note.slice(0, -1)]
+            finger = RIGHT_NOTE_TO_KEY[this.props.note.slice(0, -1)]
         }
         if(noteMajorNum !== this.props.leftMajorNum && noteMajorNum !== this.props.rightMajorNum)
         {
@@ -62,7 +62,7 @@ class Key extends React.Component
             key = (
                 <div className={keyClassName} style={{cursor : 'pointer'}} onClick={() => this.handleClick(this.props.note)}>
                     <div className='key-text'>{this.props.note}</div>
-                    <div className='key-text-key'>{temp}</div>
+                    <div className='key-text-key'>{finger}</div>
                 </div>
             )
             
